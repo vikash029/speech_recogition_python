@@ -50,6 +50,10 @@ def run_alexa():
         song = command.replace('play','')
         talk('playing'+ song)
         pywhatkit.playonyt(song)
+    elif "search" in command:
+        se = command.replace("search"," ")
+        talk("great" + se)
+        pywhatkit.search(se)
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk('current time is ' + time)
@@ -61,13 +65,17 @@ def run_alexa():
     elif "date" in command:
         talk("sorry, I have a boyfriend")
     elif "are you single" in command:
-        talk("I am in a relationship")
+        talk("I am in a relationship in kuku")
     elif "joke" in command:
         talk(pyjokes.get_joke())
     elif "hello" in command:
         talk("hello who are you" " how may i help you ")
     elif "and you" in command:
         talk("am good" "how may i help you")
+
+    elif "call" in command:
+        pywhatkit.sendwhatmsg("datetime.datetime.now()")
+
     elif "search" in command:
 
         google = command.replace('search', '')
